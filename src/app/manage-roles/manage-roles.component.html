@@ -1,0 +1,112 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>	
+	<div class="userId" *ngIf="!changeToInfo">
+		<form class="form" #addOrDeleteRole="ngForm">
+	<h4>Manage User</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Select Input Type:</p>
+			<label for="userId">User ID</label>
+			<input type="radio" id="userId" value="User ID">
+		</div>
+		<div class="form-group col-12">
+			<label for="userIdInfo">User ID Info</label>
+			<input type="text" id="userIdInfo" class="form-control" ngModel name="userIdInfo" required>
+		</div>
+	</div>
+	<hr />
+	<button type="submit" class="cancel btn btn-primary" (click) = "showUserInfo()" [disabled]="!addOrDeleteRole.valid">Submit</button>
+	</form>
+	</div>
+	<div class="userInformation" *ngIf="changeToInfo">
+		<form class="form" #addRole="ngForm">
+			<h4>Personal Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="firstName">First Name</label>
+			<input type="text" class="form-control" id="firstName">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="middleName">Middle Name</label>
+			<input type="text" class="form-control" id="middleName">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="lastName">Last Name</label>
+			<input type="text" class="form-control" id="lastName">
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="emailId">Email Id</label>
+			<input type="text" class="form-control" id="emailId">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="DOB">Date of Birth</label>
+			<my-date-picker name="myname"></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="phoneNumber">Phone Number</label>
+			<input type="text" class="form-control" id="phoneNumber">
+		</div>
+	</div>
+	<hr />
+	<h4>Work Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="emailId">Email Id</label>
+			<input type="text" class="form-control" id="emailId">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="employeeId">Employee Id</label>
+			<input type="text" class="form-control" id="employeeId">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="phoneNumber">Phone Number</label>
+			<input type="text" class="form-control" id="phoneNumber">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="reportingTo">Reporting To</label>
+			<input type="text" class="form-control" id="reportingTo">
+		</div>
+		</div>
+		<hr />
+		<h4>Roles</h4>
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">Division</th>
+		      <th scope="col">Department</th>
+		      <th scope="col">Role</th>
+		      <th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr *ngIf="addRoles">
+		      <td>
+		      <select class="form-control">
+			<option>Select a Division</option>
+			</select>
+			</td>
+			<td>
+				<select class="form-control">
+			<option>Select a System</option>
+			</select>
+			</td>
+			<td>
+			<select class="form-control" ngModel name="role" required>
+			<option>Select</option>
+			</select>
+			</td>
+			<td><label for="startDate">Start Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" ngModel name="startDate" required></my-date-picker>
+			<label for="endDate">End Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" ngModel name="endDate" required></my-date-picker></td>
+		    </tr>
+		  </tbody>
+			</table>
+			<button type="button" class="documents-btn btn btn-primary" (click) = "addRoleColumn()" *ngIf="!addRoles">Add Role</button>
+			<hr />
+			<button type="submit" class="cancel btn btn-primary" [disabled]="!addRole.valid" *ngIf="addRoles">Submit</button>
+   <button type="cancel" class="cancel cancel-btn btn btn-primary" (click)="changeToInfo=false" *ngIf="addRoles">Cancel</button>
+		</form>
+	</div>

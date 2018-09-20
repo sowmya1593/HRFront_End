@@ -1,0 +1,59 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<form class="form">
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="division">Division</label>
+	  		<select class="form-control" id="division" (change)="first($event)">
+	  			<option>Select</option>
+	  			<option value="Security">Security</option>
+	  		</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="system">System</label>
+	  		<select class="form-control" id="system" (change)="second($event)">
+	  			<option>Select</option>
+	  			<option value="COVAR">COVAR</option>
+	  		</select>
+		</div>
+	</div>
+</form>
+<div *ngIf = "firstDropDown==true && secondDropDown==true">
+	<form class="form" #role="ngForm">
+	<div class="form-row">
+		<div class="form-group col-12">
+			<label for="roleName">Role Name</label><div class="asterisk">*</div>
+			<input type="text" id="roleName" class="form-control" ngModel name="roleName" required>
+		</div>
+		<div class="form-group col-12">
+			<label for="description">Description</label><div class="asterisk">*</div>
+			<textarea cols="156" rows="7" id="description" ngModel name="description" required></textarea>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="document">Document</label>
+			<input type="file" style="display:block" />
+		</div>
+	</div>
+      <input type="checkbox" (change) = "showOtherFields($event.target.checked)">
+  <b><p style="display:inline">Add Role Mapping</p></b>
+  <div *ngIf=showFields>
+  	<div class="form-row">
+		<div class="form-group col-12">
+			<label for="otherRoleId">Other Role Id</label><div class="asterisk">*</div>
+			<input type="text" id="otherRoleId" class="form-control" ngModel name="otherRoleId" required>
+		</div>
+		<div class="form-group col-12">
+			<label for="otherMapName">Other Map Name</label>
+			<input type="text" id="otherMapName" class="form-control">
+		</div>
+		<div class="form-group col-12">
+			<label for="otherMapDescription">Other Map Description</label>
+			<textarea cols="156" rows="7" id="otherMapDescription"></textarea>
+		</div>
+	</div>
+  </div>
+	<hr />
+	<button type="submit" class="cancel btn btn-primary" [disabled]="!role.valid">Submit</button>
+    <button type="cancel" class="cancel cancel-btn btn btn-primary">Cancel</button>
+</form>
+</div>

@@ -1,0 +1,107 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<form class="form" #onBoardCreate="ngForm">
+	<div class="page-description"><h3>Modify</h3>
+    		<hr class="after-heading" />
+    		</div>
+	<h4>Personal Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="firstName">First Name</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="firstName" ngModel name = "firstName" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="middleName">Middle Name</label>
+			<input type="text" class="form-control" id="middleName">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="lastName">Last Name</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="lastName" ngModel name = "lasttName" required>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="emailId">Email Id</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="emailId" ngModel name = "emailId" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="DOB">Date of Birth</label><div class="asterisk">*</div>
+			<my-date-picker name="myname"></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="phoneNumber">Phone Number</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="phoneNumber" ngModel name = "phoneNumber" required>
+		</div>
+	</div>
+	<hr />
+	<h4>Work Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="emailId">Email Id</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="emailId" ngModel name = "emailId" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="employeeId">Employee Id</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="employeeId" ngModel name = "employeeId" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="phoneNumber">Phone Number</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="phoneNumber" ngModel name = "phoneNumber" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="startDate">Start Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname"></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="accountType">Account Type</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="accountType" value="Internal" ngModel name = "accountType" required readonly>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="accountSubType">Account Sub-Type</label><div class="asterisk">*</div>
+			<select class="form-control" id="accountSubType" ngModel name = "accountSubType" required>
+			<option>Select</option>
+			<option>Employee</option>
+			<option>Contractor</option>
+			<option>System</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="reportingTo">Reporting To</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="reportingTo" ngModel name = "reportingTo" required>
+		</div>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<label for="division">Division</label><div class="asterisk">*</div>
+			<select class="form-control" id="division" ngModel name = "division" required>
+				<option>Select</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="system">System</label><div class="asterisk">*</div>
+			<select class="form-control" id="system" ngModel name = "system" required>
+				<option>Select</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="role">Role</label><div class="asterisk">*</div>
+			<select class="form-control" id="role" ngModel name = "role" required>
+				<option>Select</option>
+			</select>
+		</div>
+		<button type="button" class="btn btn-primary">Add More</button>
+	</div>
+	<hr />
+	<h4>Documents</h4>
+	<div class="documents">
+		<p>You can upload upto 3 documents</p>
+		<input type="file" class="file"> 
+		<button type="button" class="documents-btn btn btn-primary">Add More</button>
+	</div>
+	<hr />
+	<h4 class="notes">Notes</h4><div class="asterisk">*</div>
+	<textarea cols="156" rows="7" id="notes"></textarea>
+	<hr />
+	<button type="submit" class="cancel btn btn-primary" [disabled]="!onBoardCreate.valid">Submit</button>
+    <button type="cancel" class="cancel cancel-btn btn btn-primary">Cancel</button>
+</form>

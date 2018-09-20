@@ -1,0 +1,65 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<div class="modal fade" id="addOrEditApproval" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Approval</h5>
+      </div>
+      <div class="modal-body">
+        <form class="form">
+        	<div class="form-row">
+		<div class="form-group col-12">
+			<label for="userId">User ID</label>
+			<input type="text" class="form-control" id="userId">
+		</div>
+	</div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="modal-btn btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="#"><button type="button" class="modal-btn btn btn-primary" data-dismiss="modal">Submit</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form class="form">
+	<h4>Manage Onboard Approvals</h4>
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<select class="form-control">
+			<option>Select a Division</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<select class="form-control">
+			<option>Select a System</option>
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<select class="form-control">
+			<option>Select</option>
+			</select>
+		</div>
+	</div>
+	<hr />
+	<h4>Approve Details</h4>
+	<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">Name</th>
+		      <th scope="col">Email Id</th>
+		      <th scope="col">Level</th>
+		      <th scope="col">SLA</th>
+		      <th scope="col">Type</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td></td>
+		    </tr>
+		  </tbody>
+			</table>
+			<button type="button" class="documents-btn btn btn-primary" data-toggle="modal" data-target="#addOrEditApproval">Add/Edit Approval</button>
+</form>

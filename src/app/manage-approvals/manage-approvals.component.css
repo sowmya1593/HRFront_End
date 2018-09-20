@@ -1,0 +1,37 @@
+form{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #336E7B;
+    margin: 20px;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+table{
+	background-color: #ffffff;
+	text-align: center;
+}
+
+table thead tr th{
+	font-weight: 500;
+	color: black;
+}
+
+.btn{
+	background-color: #336E7B;
+	border-color: #336E7B;
+}
+
+.documents-btn{
+	float: right;
+}
+
+.modal-header{
+	background-color: #336E7B;
+	color: white;
+}
+
+.modal-btn{
+	background-color: #336E7B;
+	border-color: #336E7B;
+}

@@ -1,0 +1,27 @@
+form{
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #336E7B;
+    margin: 20px;
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.asterisk{
+	display: inline;
+	color: red;
+	margin-left: 2px;
+}
+
+.cancel{
+	float: right;
+}
+
+.cancel-btn{
+	margin-right: 5px;
+}
+
+.btn{
+	background-color: #336E7B;
+	border-color: #336E7B;
+}

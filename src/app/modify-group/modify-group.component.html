@@ -1,0 +1,24 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<form class="form">
+	<div class="page-description"><h3>Modify</h3>
+    		<hr class="after-heading" />
+    		</div>
+	<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">Select</th>
+		      <th scope="col">First Name</th>
+		      <th scope="col">Last Name</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr *ngFor = "let policy of policies">
+		      <!-- <td><input type = "checkbox" [checked] = "check" (change) = "viewEvent($event, check)"></td> -->
+		      <td><input type = "checkbox"></td>
+		      <td></td>
+		      <td></td>
+		    </tr>
+		  </tbody>
+			</table>
+</form>

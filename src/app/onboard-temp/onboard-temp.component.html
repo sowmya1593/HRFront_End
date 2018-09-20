@@ -1,0 +1,102 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<form class="form" #onBoardCreate="ngForm">
+	<div class="page-description"><h3>OnBoarding</h3>
+    		<hr class="after-heading" />
+    		</div>
+    		<h4>Personal Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="firstName">First Name</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="firstName" ngModel name = "firstName" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="middleName">Middle Name</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="middleName" ngModel name = "middleName" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="lastName">Last Name</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="lastName" ngModel name = "lastName" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="dob">Date of Birth</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" placeholder="mm/dd/yyyy" ngModel name = "DOB" required></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="gender">Gender</label><div class="asterisk">*</div>
+			<select class="form-control" id="gender" ngModel name = "gender" required>
+				<option>Choose</option>
+				<option value="female">Female</option>
+				<option value="male">Male</option>
+			</select>
+		</div>
+	</div>
+	<hr />
+	<h4>Work Information</h4>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="workingTitle">Working Title</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="workingTitle" ngModel name = "workingTitle" required>
+		</div>
+	</div>
+		<div class="form-row">
+		<div class="form-group col-md-6">
+			<label for="divison">Division</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="division" ngModel name = "division" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="subDivision">Phone Number</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="subDivision" ngModel name = "subDivision" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="workLocation">Work Location</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="workLocation" ngModel name = "workLocation" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="directSupervisor">Direct Supervisor</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="directSupervisor" ngModel name = "directSupervisor" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="costCenter">Cost Center</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="costCenter" ngModel name = "costCenter" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="vecNo">VEC Number</label>
+			<input type="text" class="form-control" id="vecNo">
+		</div>
+		<div class="form-group col-md-6">
+			<label for="vecBeginDate">VEC Begin Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" placeholder="mm/dd/yyyy" ngModel name = "vecBeginDate" required></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="vecEndDate">VEC End Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" placeholder="mm/dd/yyyy" ngModel name = "vecEndDate" required></my-date-picker>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="contractEndDate">Contract End Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" placeholder="mm/dd/yyyy" ngModel name = "contractEndDate" required></my-date-picker>
+		</div>
+		<div class="col-md-6">
+			<label for="employeeType">Employee Type</label><div class="asterisk">*</div>
+			<select class="form-control" id="employeeType" ngModel name = "employeeType" required>
+				<option>Choose</option>
+				<option value="classified">Classified</option>
+				<option value="wage">Wage</option>
+			</select>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="keyedBy">Keyed By</label><div class="asterisk">*</div>
+			<input type="text" class="form-control" id="keyedBy" ngModel name = "keyedBy" required>
+		</div>
+		<div class="form-group col-md-6">
+			<label for="date">Date</label><div class="asterisk">*</div>
+			<my-date-picker name="myname" placeholder="mm/dd/yyyy" ngModel name = "date" required></my-date-picker>
+		</div>
+		</div>
+		<hr />
+	<h4 class="notes">Comments/ Notes</h4>
+	<textarea cols="156" rows="7" id="notes"></textarea>
+	<hr />
+	<button type="submit" class="cancel btn btn-primary" [disabled]="!onBoardCreate.valid">Submit</button>
+    <button type="cancel" class="cancel cancel-btn btn btn-primary">Cancel</button>
+</form>
