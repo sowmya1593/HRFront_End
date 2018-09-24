@@ -10,6 +10,8 @@ import { RolesComponent } from './roles/roles.component';
 import { ModifyComponent } from './modify/modify.component';
 import { OnboardTempComponent } from './onboard-temp/onboard-temp.component';
 import { ModifyGroupComponent } from './modify-group/modify-group.component';
+import { EmployeeTypeComponent } from './employee-type/employee-type.component';
+import { SelectModifyComponent } from './select-modify/select-modify.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -20,7 +22,9 @@ const appRoutes: Routes = [
   {path: 'manageRoles', component: RolesComponent},
   {path: 'modifyIndividual', component: ModifyComponent},
   {path: 'modifyGroup', component: ModifyGroupComponent},
-  {path: 'onBoardVolunteersAndContractors', component: OnboardTempComponent}
+  {path: 'onBoardVolunteersAndContractors', component: OnboardTempComponent},
+  {path: 'selectEmployeeType', component: EmployeeTypeComponent},
+  {path: 'selectModifyType', component: SelectModifyComponent}
 ];
 
 @NgModule({

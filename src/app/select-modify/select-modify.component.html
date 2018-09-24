@@ -1,0 +1,106 @@
+<app-navigation-bar></app-navigation-bar>
+<app-sticky-bar></app-sticky-bar>
+<form class="form" #searchForm="ngForm">
+        	<div class="form-row">
+				<div class="form-group col-12">
+					<label for="type"> Type</label>
+					<select class="form-control" id="type" (change) = "navigateModify($event.target.value)">
+						<option>Choose</option>
+						<option value="individual">Modify Individual</option>
+						<option value="group">Modify Group</option>
+					</select>
+					</div>
+					</div>
+				</form>
+				<div *ngIf = "showIndividual">
+					<form class="form" #searchForm="ngForm">
+        	<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="vecNumber">Search by VEC Number/ Employee Id/ Personal Details</label>
+					<select class="form-control" id="type" (change) = "select($event.target.value)">
+						<option>Choose</option>
+						<option value="vecNo">VEC Number</option>
+						<option value="employeeId">Employee Id</option>
+						<option value="personalDetails">Personal Details</option>
+					</select>
+				</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-6" *ngIf = "vecNo">
+					<input type="text" class="form-control" id="vecNo" placeholder = "Enter VEC no" required minlength = "10" [(ngModel)]="vecNum" [name]="'vec_no'" #vecNo="ngModel">
+					<p style="color:red;" *ngIf="vecNo.errors?.minlength">
+    					VEC No must be 10 characters long.
+  					</p>
+					<button type="submit" class="cancel btn btn-outline-dark" (click)="navigate('modifyIndividual')" [disabled]="!searchForm.valid">Submit</button>
+				</div>
+				<div class="form-group col-md-6" *ngIf = "employeeId">
+					<input type="text" class="form-control" id="employeeId" placeholder = "Enter Employee Id" required minlength = "10" [(ngModel)]="employee" [name]="'employee_id'" #empId="ngModel">
+					<p style="color:red;" *ngIf="empId.errors?.minlength">
+    					Employee Id must be 10 characters long.
+  					</p>
+					<button type="submit" class="cancel btn btn-outline-dark" (click)="navigate('modifyIndividual')" [disabled]="!searchForm.valid">Submit</button>
+				</div>
+				</div>
+				<div class="form-row" *ngIf = "personalDetails">
+					<div class="form-group col-md-6">
+					<label for="firstName">First Name</label>
+					<input type="text" class="form-control" id="firstName">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="lastName">Last Name</label><div class="asterisk">*</div>
+					<input type="text" class="form-control" id="lastName" ngModel name = "lastName" required>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="DOB">Date of Birth</label><div class="asterisk">*</div>
+					<my-date-picker name="myname" placeholder="mm/dd/yyyy" [options]="myDatePickerOptions" ngModel name = "dateOfBirth" required></my-date-picker>
+				</div>
+				<div class="form-group col-md-6">
+					<label for="gender">Gender</label>
+					<input type="text" class="form-control" id="gender">
+					<button type="submit" class="cancel btn btn-outline-dark" (click)="navigate('modifyIndividual')" [disabled]="!searchForm.valid">Submit</button>
+				</div>
+				</div>
+        </form>
+				</div>
+				<div *ngIf = "showGroup">
+					<form class="form" #modifyGroupForm = "ngForm">
+        	<div class="form-row">
+				<div class="form-group col-12">
+					<label for="type">Type</label>
+					<select class="form-control" id="type" (change) = "selectToModify($event.target.value)">
+						<option>Choose</option>
+						<option value="manager">Manager</option>
+						<option value="localityCode">Locality Code</option>
+						<option value="costCenter">Cost Center</option>
+					</select>
+				</div>
+	</div>
+	<div *ngIf = "manager">
+		<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="firstName">First Name</label>
+					<input type="text" class="form-control" id="firstName">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="lastName">Last Name</label><div class="asterisk">*</div>
+					<input type="text" class="form-control" ngModel name ="lastName" id="lastName" required>
+				</div>
+	</div>
+	</div>
+	<div *ngIf = "localityCode">
+		<div class="form-row">
+				<div class="form-group col-md-6"><div class="asterisk-input">*</div>
+					<input type="text" class="form-control" id="localityCode" ngModel name = "localityCode" placeholder = "Enter Locality Code" required>
+				</div>
+	</div>
+	</div>
+	<div *ngIf = "costCenter">
+		<div class="form-row">
+				<div class="form-group col-md-6"><div class="asterisk-input">*</div>
+					<input type="text" class="form-control" id="costCenter" ngModel name = "costCenter" placeholder = "Enter Cost Center" required>
+				</div>
+	</div>
+	</div>
+	<button type="submit" class="cancel btn btn-outline-dark" (click)="navigate('modifyGroup')" [disabled]="!modifyGroupForm.valid">Submit</button>
+        </form>
+        </div>

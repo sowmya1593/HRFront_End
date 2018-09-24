@@ -5,148 +5,6 @@
             <div class="login"><p class="user">Sunny Singh<fa class="down-icon" [name]="'chevron-down'"></fa></p></div>
           </nav>
     </div>
-<ng-template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Employee Type</h4>
-  </div>
-  <div class="modal-body">
-    <form class="form">
-        	<div class="form-row">
-				<div class="form-group col-12">
-					<label for="employeeType">Employee Type</label>
-					<select class="form-control" (change) = "route($event.target.value);c('Save click');open(search)">
-						<option>Choose</option>
-						<option value="classified">Classified</option>
-						<option value="wage">Wage</option>
-						<option value="volunteers">Volunteers</option>
-						<option value="contractors">Contractors</option>
-					</select>
-				</div>
-	</div>
-        </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
-  </div>
-</ng-template>
-<ng-template #search let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Search User</h4>
-  </div>
-  <div class="modal-body">
-    <form class="form">
-        	<div class="form-row">
-				<div class="form-group col-md-6">
-					<label for="firstName">First Name</label>
-					<input type="text" class="form-control" id="firstName">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="lastName">Last Name</label>
-					<input type="text" class="form-control" id="lastName">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="DOB">Date of Birth</label>
-					<my-date-picker name="myname" placeholder="mm/dd/yyyy"></my-date-picker>
-				</div>
-				<div class="form-group col-md-6">
-					<label for="SSN">Social Security Number</label>
-					<input type="text" class="form-control" id="SSN">
-				</div>
-	</div>
-        </form>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
-    <button type="button" class="btn btn-outline-dark" (click)="navigate('searchUser');c('Save click')">Search</button>
-  </div>
-  </div>
-</ng-template>
-<ng-template #selectModify let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Modify</h4>
-  </div>
-  <div class="modal-body">
-    <form class="form">
-        	<div class="form-row">
-				<div class="form-group col-12">
-					<label for="type"> Type</label>
-					<select class="form-control" id="type" (change) = "navigateModify($event.target.value)">
-						<option>Choose</option>
-						<option value="individual">Modify Individual</option>
-						<option value="group">Modify Group</option>
-					</select>
-					</div>
-					</div>
-				</form>
-				<div *ngIf = "showIndividual">
-					<form class="form">
-        	<div class="form-row">
-				<div class="form-group col-md-6">
-					<label for="firstName">First Name</label>
-					<input type="text" class="form-control" id="firstName">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="lastName">Last Name</label>
-					<input type="text" class="form-control" id="lastName">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="vecNumber">VEC Number</label>
-					<input type="text" class="form-control" id="vecNumber">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="employeeId">Employee Id</label>
-					<input type="text" class="form-control" id="employeeId">
-				</div>
-	</div>
-        </form>
-				</div>
-				<div *ngIf = "showGroup">
-					<form class="form">
-        	<div class="form-row">
-				<div class="form-group col-12">
-					<label for="type">Type</label>
-					<select class="form-control" id="type" (change) = "selectToModify($event.target.value)">
-						<option>Choose</option>
-						<option value="manager">Manager</option>
-						<option value="localityCode">Locality Code</option>
-						<option value="costCenter">Cost Center</option>
-					</select>
-				</div>
-	</div>
-	<div *ngIf = "manager">
-		<div class="form-row">
-				<div class="form-group col-md-6">
-					<label for="firstName">First Name</label>
-					<input type="text" class="form-control" id="firstName">
-				</div>
-				<div class="form-group col-md-6">
-					<label for="lastName">Last Name</label>
-					<input type="text" class="form-control" id="lastName">
-				</div>
-	</div>
-	</div>
-	<div *ngIf = "localityCode">
-		<div class="form-row">
-				<div class="form-group col-md-6">
-					<input type="text" class="form-control" id="localityCode" placeholder = "Enter Locality Code">
-				</div>
-	</div>
-	</div>
-	<div *ngIf = "costCenter">
-		<div class="form-row">
-				<div class="form-group col-md-6">
-					<input type="text" class="form-control" id="costCenter" placeholder = "Enter Cost Center">
-				</div>
-	</div>
-	</div>
-        </form>
-				</div>
-				</div>
-				<div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Close</button>
-    <button type="button" class="btn btn-outline-dark" *ngIf = "showIndividual" (click)="navigate('modifyIndividual');c('Save click')">Search</button>
-    <button type="button" class="btn btn-outline-dark" *ngIf = "showGroup" (click)="navigate('modifyGroup');c('Save click')">Search</button>
-  	</div>
-  </ng-template>
     <div class="dashboard">
          <div class="first-row">
         <div class="card" style="width: 18rem;">
@@ -157,7 +15,7 @@
     <!--<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>-->
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="icons-div">
-    	<a href="#" class="card-link" (click)="open(content)"><fa [name]="'plus-circle'"></fa></a>
+    	<a routerLink="/selectEmployeeType" class="card-link"><fa [name]="'plus-circle'"></fa></a>
     <!-- <a routerLink="/locality/map" class="view-edit card-link"><fa class="edit-icon" [name]="'edit'"></fa></a>
     <a routerLink="#" class="view-edit card-link"><fa class="right-icon" [name]="'angle-double-right'"></fa></a>
     <a routerLink="#" class="view-edit card-link"><fa class="ban-icon" [name]="'ban'"></fa></a> -->
@@ -172,7 +30,7 @@
     <!--<h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>-->
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <div class="icons-div">
-    	<a href="#" class="card-link" (click)="open(selectModify)"><fa [name]="'plus-circle'"></fa></a>
+    	<a routerLink="/selectModifyType" class="card-link"><fa [name]="'plus-circle'"></fa></a>
     <!-- <a routerLink="/locality/map" class="view-edit card-link"><fa class="edit-icon" [name]="'edit'"></fa></a>
     <a routerLink="#" class="view-edit card-link"><fa class="right-icon" [name]="'angle-double-right'"></fa></a>
     <a routerLink="#" class="view-edit card-link"><fa class="ban-icon" [name]="'ban'"></fa></a> -->

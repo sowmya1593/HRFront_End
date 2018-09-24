@@ -20,6 +20,8 @@ import { ModifyComponent } from './modify/modify.component';
 import { OnboardTempComponent } from './onboard-temp/onboard-temp.component';
 import { HttpModule } from '@angular/http';
 import { ModifyGroupComponent } from './modify-group/modify-group.component';
+import { EmployeeTypeComponent } from './employee-type/employee-type.component';
+import { SelectModifyComponent } from './select-modify/select-modify.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ModifyGroupComponent } from './modify-group/modify-group.component';
     RolesComponent,
     ModifyComponent,
     OnboardTempComponent,
-    ModifyGroupComponent
+    ModifyGroupComponent,
+    EmployeeTypeComponent,
+    SelectModifyComponent
   ],
   imports: [
     BrowserModule,
