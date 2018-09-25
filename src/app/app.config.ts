@@ -1,7 +1,7 @@
 /**
  * New typescript file
  */
-const baseUrl = 'http://localhost:8080/hrprovisioning/';
+const baseUrl = 'http://localhost:8080/';
 
 
 const apiBaseUrl = baseUrl;
