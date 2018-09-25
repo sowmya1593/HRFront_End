@@ -11,6 +11,10 @@ form{
 	float: right;
 }
 
+.navigate-modify{
+	margin-bottom: 5px;	
+}
+
 .asterisk{
 	display: inline;
 	color: red;
